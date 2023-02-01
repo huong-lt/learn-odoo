@@ -36,6 +36,7 @@
 							<field name="ethnic_id" />
 							<field name="class_count" string="Class Count" />
 						</group>
+						
 						<notebook>
 							<page name="class_enrollment" string="Class">
 								<field name="enrollment_ids">

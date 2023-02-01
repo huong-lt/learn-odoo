@@ -5,6 +5,7 @@ from odoo.exceptions import UserError
 class EducationClass(models.Model):
     _name = 'education.class'
     _description = 'Education Class'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     
     name = fields.Char(
         string='Name',

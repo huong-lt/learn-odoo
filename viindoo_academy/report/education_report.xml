@@ -12,8 +12,7 @@
 			</field>
 		</record>
 
-		<record id="view_education_report_graph"
-			model="ir.ui.view">
+		<record id="view_education_report_graph" model="ir.ui.view">
 			<field name="name">education.report.graph</field>
 			<field name="model">education.report</field>
 			<field name="arch" type="xml">

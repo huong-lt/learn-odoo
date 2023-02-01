@@ -16,4 +16,5 @@ class ResEthnic(models.Model):
         # groups='base.group_user,base.group_portal'
         )
     
-
+    country_id = fields.Many2one('res.country',string='Country')
+    description = fields.Html()

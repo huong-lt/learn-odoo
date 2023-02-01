@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="view_academy_report_pivot2" model="ir.ui.view">
+			<field name="name">academy.report.pivot2</field>
+			<field name="model">academy.report2</field>
+			<field name="arch" type="xml">
+				<pivot string="Education Analysis 2" sample="1">
+					<field name="class_id" type="row" />
+				</pivot>
+			</field>
+		</record>
+
+		<record id="view_academy_report_graph2" model="ir.ui.view">
+			<field name="name">academy.report.graph2</field>
+			<field name="model">academy.report2</field>
+			<field name="arch" type="xml">
+				<graph string="Education Analysis 2" type="line" sample="1">
+					<field name="class_id" />
+					<field name="date" />
+				</graph>
+			</field>
+		</record>
+
+		<record id="action_academy_report2"
+			model="ir.actions.act_window">
+			<field name="name">Education Analysis 2</field>
+			<field name="res_model">academy.report2</field>
+			<field name="view_mode">pivot,graph</field>
+		</record>
+		<menuitem id="education_reports_menu" name="Reports"
+			parent="root_menu" sequence="10">
+			<menuitem id="education_reports_management_menu"
+				name="Management" sequence="4">
+				<menuitem id="menu_action_academy_report2"
+					name="Class Reports"
+					action="viindoo_academy.action_academy_report2" sequence="2"></menuitem>
+			</menuitem>
+		</menuitem>
+
+	</data>
+</odoo>

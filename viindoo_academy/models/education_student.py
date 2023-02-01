@@ -38,9 +38,9 @@ class EducationStudent(models.Model):
         for r in self:
             r.ethnic_code2 = r.ethnic_id.code
             
-    @api.onchange('ethnic_id')
-    def _onchange_country(self):
-        self.country_id = self.ethnic_id.country_ids[-1:]
+    # @api.onchange('ethnic_id')
+    # def _onchange_country(self):
+    #     self.country_id = self.ethnic_id.country_ids[-1:]
         
     @api.depends("user_id")
     def _compute_name(self):

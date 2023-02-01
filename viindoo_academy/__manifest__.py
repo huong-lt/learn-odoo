@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+     'depends': ['base','mail','contacts'],
 
     # always loaded
     'data': [
@@ -37,7 +37,8 @@
         'views/res_ethnic_views.xml',
         'report/education_class_reports.xml',
         'report/education_student_reports.xml',
-        'report/education_report.xml'
+        'report/education_report.xml',
+        'report/education_class2.xml'
         # 'views/templates.xml',
     ],
     # only loaded in demonstration mode

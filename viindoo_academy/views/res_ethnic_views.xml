@@ -16,17 +16,16 @@
 			<field name="name">res.ethnic.form</field>
 			<field name="model">res.ethnic</field>
 			<field name="arch" type="xml">
-				<form string="Class Form">
+				<form string="Ethnic Form">
 					<sheet>
-						<header>
-							<button name="button_abc"
-								groups="account.group_account_manager" />
-						</header>
 						<group>
 							<field name="name" />
 							<field name="code" groups="base.group_user" />
 						</group>
-
+						<group>
+							<field name="country_id" />
+						</group>
+						<field name="description"/>
 					</sheet>
 				</form>
 			</field>

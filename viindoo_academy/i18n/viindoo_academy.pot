@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-04 01:17+0000\n"
-"PO-Revision-Date: 2023-01-04 01:17+0000\n"
+"POT-Creation-Date: 2023-01-04 01:16+0000\n"
+"PO-Revision-Date: 2023-01-04 01:16+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,6 +31,7 @@ msgid "Active"
 msgstr ""
 
 #. module: viindoo_academy
+#: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multiple__active_model
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_single__active_model
 msgid "Active Model"
 msgstr ""
@@ -42,6 +43,7 @@ msgstr ""
 
 #. module: viindoo_academy
 #: model_terms:ir.ui.view,arch_db:viindoo_academy.view_education_enrollment_multi_form
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.view_education_enrollment_multiple_form
 #: model_terms:ir.ui.view,arch_db:viindoo_academy.view_education_enrollment_single_form
 msgid "Cancel"
 msgstr ""
@@ -53,11 +55,22 @@ msgstr ""
 
 #. module: viindoo_academy
 #: model:ir.actions.act_window,name:viindoo_academy.education_class_action
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_course__class_ids
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_enrollment__class_id
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_student__class_id
+#: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multiple__class_ids
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_single__class_id
 #: model:ir.ui.menu,name:viindoo_academy.education_class_menu
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_course_view_form
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_student_view_form
 msgid "Class"
+msgstr ""
+
+#. module: viindoo_academy
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_course__class_count
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_student__class_count
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_student_view_form
+msgid "Class Count"
 msgstr ""
 
 #. module: viindoo_academy
@@ -109,26 +122,62 @@ msgid "Country"
 msgstr ""
 
 #. module: viindoo_academy
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_class__course_id
+msgid "Course"
+msgstr ""
+
+#. module: viindoo_academy
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_course_view_form
+msgid "Course Form"
+msgstr ""
+
+#. module: viindoo_academy
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_course__name
+msgid "Course Name"
+msgstr ""
+
+#. module: viindoo_academy
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_course_view_search
+msgid "Course Search"
+msgstr ""
+
+#. module: viindoo_academy
+#: model:ir.actions.act_window,name:viindoo_academy.education_course_action
+#: model:ir.model,name:viindoo_academy.model_education_course
+#: model:ir.ui.menu,name:viindoo_academy.education_course_menu
+msgid "Courses"
+msgstr ""
+
+#. module: viindoo_academy
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_course_view_tree
+msgid "Courses Tree"
+msgstr ""
+
+#. module: viindoo_academy
 #: model_terms:ir.ui.view,arch_db:viindoo_academy.education_class_view_search
 msgid "Create Date"
 msgstr ""
 
 #. module: viindoo_academy
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_class__create_uid
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_course__create_uid
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_enrollment__create_uid
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_student__create_uid
 #: model:ir.model.fields,field_description:viindoo_academy.field_res_ethnic__create_uid
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multi__create_uid
+#: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multiple__create_uid
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_single__create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: viindoo_academy
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_class__create_date
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_course__create_date
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_enrollment__create_date
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_student__create_date
 #: model:ir.model.fields,field_description:viindoo_academy.field_res_ethnic__create_date
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multi__create_date
+#: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multiple__create_date
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_single__create_date
 msgid "Created on"
 msgstr ""
@@ -141,15 +190,18 @@ msgstr ""
 
 #. module: viindoo_academy
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_class__description
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_course__description
 msgid "Description"
 msgstr ""
 
 #. module: viindoo_academy
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_class__display_name
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_course__display_name
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_enrollment__display_name
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_student__display_name
 #: model:ir.model.fields,field_description:viindoo_academy.field_res_ethnic__display_name
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multi__display_name
+#: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multiple__display_name
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_single__display_name
 msgid "Display Name"
 msgstr ""
@@ -196,11 +248,28 @@ msgid "End Date"
 msgstr ""
 
 #. module: viindoo_academy
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_class__enroll_ids
 #: model_terms:ir.ui.view,arch_db:viindoo_academy.education_class_view_form
 #: model_terms:ir.ui.view,arch_db:viindoo_academy.education_student_view_form
 #: model_terms:ir.ui.view,arch_db:viindoo_academy.view_education_enrollment_multi_form
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.view_education_enrollment_multiple_form
 #: model_terms:ir.ui.view,arch_db:viindoo_academy.view_education_enrollment_single_form
 msgid "Enroll"
+msgstr ""
+
+#. module: viindoo_academy
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_student_view_form
+msgid "Enroll Multiple"
+msgstr ""
+
+#. module: viindoo_academy
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_class__enroll_students_ids
+msgid "Enroll Students"
+msgstr ""
+
+#. module: viindoo_academy
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_class_view_form
+msgid "Enroll multiple"
 msgstr ""
 
 #. module: viindoo_academy
@@ -209,21 +278,15 @@ msgid "Enrolled Classes"
 msgstr ""
 
 #. module: viindoo_academy
-#: model:ir.model.fields,field_description:viindoo_academy.field_education_class__enrolled_student_ids
-msgid "Enrolled Student"
-msgstr ""
-
-#. module: viindoo_academy
-#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_class_view_form
-msgid "Enrolled Students"
-msgstr ""
-
-#. module: viindoo_academy
 #: model:ir.actions.act_window,name:viindoo_academy.education_enrollment_action
-#: model:ir.model.fields,field_description:viindoo_academy.field_education_class__enrollment_ids
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_student__enrollment_ids
 #: model:ir.ui.menu,name:viindoo_academy.education_enrollment_menu
-#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_class_view_form
 msgid "Enrollment"
+msgstr ""
+
+#. module: viindoo_academy
+#: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multiple__date
+msgid "Enrollment Date"
 msgstr ""
 
 #. module: viindoo_academy
@@ -259,45 +322,59 @@ msgstr ""
 
 #. module: viindoo_academy
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_class__historical_student_ids
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_class_view_form
 msgid "Historical Students"
 msgstr ""
 
 #. module: viindoo_academy
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_course_view_form
+msgid "History Class"
+msgstr ""
+
+#. module: viindoo_academy
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_class__id
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_course__id
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_enrollment__id
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_student__id
 #: model:ir.model.fields,field_description:viindoo_academy.field_res_ethnic__id
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multi__id
+#: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multiple__id
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_single__id
 msgid "ID"
 msgstr ""
 
 #. module: viindoo_academy
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_class____last_update
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_course____last_update
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_enrollment____last_update
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_student____last_update
 #: model:ir.model.fields,field_description:viindoo_academy.field_res_ethnic____last_update
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multi____last_update
+#: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multiple____last_update
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_single____last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: viindoo_academy
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_class__write_uid
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_course__write_uid
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_enrollment__write_uid
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_student__write_uid
 #: model:ir.model.fields,field_description:viindoo_academy.field_res_ethnic__write_uid
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multi__write_uid
+#: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multiple__write_uid
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_single__write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: viindoo_academy
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_class__write_date
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_course__write_date
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_enrollment__write_date
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_student__write_date
 #: model:ir.model.fields,field_description:viindoo_academy.field_res_ethnic__write_date
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multi__write_date
+#: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multiple__write_date
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_single__write_date
 msgid "Last Updated on"
 msgstr ""
@@ -308,10 +385,25 @@ msgid "Line"
 msgstr ""
 
 #. module: viindoo_academy
-#: model:ir.actions.act_window,name:viindoo_academy.education_enrollment_multi_class_action
-#: model:ir.actions.act_window,name:viindoo_academy.education_enrollment_multi_student_action
 #: model_terms:ir.ui.view,arch_db:viindoo_academy.view_education_enrollment_multi_form
 msgid "Multi Enrollment Wizard"
+msgstr ""
+
+#. module: viindoo_academy
+#: model:ir.actions.act_window,name:viindoo_academy.education_enrollment_multi_class_action
+msgid "Multi Enrollment Wizard class"
+msgstr ""
+
+#. module: viindoo_academy
+#: model:ir.actions.act_window,name:viindoo_academy.education_enrollment_multi_student_action
+msgid "Multi Enrollment Wizard student"
+msgstr ""
+
+#. module: viindoo_academy
+#: model:ir.actions.act_window,name:viindoo_academy.education_enrollment_multiple_action
+#: model:ir.model,name:viindoo_academy.model_wizard_enrollment_multiple
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.view_education_enrollment_multiple_form
+msgid "Multiple Enrollment Wizard"
 msgstr ""
 
 #. module: viindoo_academy
@@ -322,8 +414,13 @@ msgid "Name"
 msgstr ""
 
 #. module: viindoo_academy
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_course_view_form
+msgid "Please input course name"
+msgstr ""
+
+#. module: viindoo_academy
 #: model_terms:ir.ui.view,arch_db:viindoo_academy.education_student_view_form
-msgid "Please input name of the class"
+msgid "Please input name of the student"
 msgstr ""
 
 #. module: viindoo_academy
@@ -332,8 +429,14 @@ msgid "Ref."
 msgstr ""
 
 #. module: viindoo_academy
+#: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multiple__registration_number
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_single__registration_number
 msgid "Registration Number"
+msgstr ""
+
+#. module: viindoo_academy
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_class__responsible_id
+msgid "Responsible"
 msgstr ""
 
 #. module: viindoo_academy
@@ -362,9 +465,15 @@ msgstr ""
 #. module: viindoo_academy
 #: model:ir.actions.act_window,name:viindoo_academy.education_student_action
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_enrollment__student_id
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_student__user_id
 #: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_single__student_id
 #: model:ir.ui.menu,name:viindoo_academy.education_student_menu
 msgid "Student"
+msgstr ""
+
+#. module: viindoo_academy
+#: model:ir.model.fields,field_description:viindoo_academy.field_education_course__students_count
+msgid "Student Count"
 msgstr ""
 
 #. module: viindoo_academy
@@ -389,7 +498,15 @@ msgstr ""
 
 #. module: viindoo_academy
 #: model:ir.model.fields,field_description:viindoo_academy.field_education_class__student_ids
+#: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_multiple__student_ids
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_class_view_form
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_course_view_form
 msgid "Students"
+msgstr ""
+
+#. module: viindoo_academy
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_class_view_form
+msgid "Students 2"
 msgstr ""
 
 #. module: viindoo_academy
@@ -398,8 +515,23 @@ msgid "Students Count"
 msgstr ""
 
 #. module: viindoo_academy
+#: model_terms:ir.ui.view,arch_db:viindoo_academy.education_class_view_form
+msgid "Students Enrollments"
+msgstr ""
+
+#. module: viindoo_academy
 #: model:ir.model.fields,help:viindoo_academy.field_education_student__class_id
 msgid "The Class of student"
+msgstr ""
+
+#. module: viindoo_academy
+#: model:ir.model.fields,help:viindoo_academy.field_education_class__course_id
+msgid "The Course of class"
+msgstr ""
+
+#. module: viindoo_academy
+#: model:ir.model.fields,help:viindoo_academy.field_education_course__class_ids
+msgid "The class that belong to the course."
 msgstr ""
 
 #. module: viindoo_academy
@@ -424,6 +556,16 @@ msgid "The description for identification."
 msgstr ""
 
 #. module: viindoo_academy
+#: model:ir.model.constraint,message:viindoo_academy.constraint_education_class_class_name_unique
+msgid "The name of Class must be unique"
+msgstr ""
+
+#. module: viindoo_academy
+#: model:ir.model.constraint,message:viindoo_academy.constraint_education_course_course_name_unique
+msgid "The name of Course must be unique!"
+msgstr ""
+
+#. module: viindoo_academy
 #: model:ir.model.fields,help:viindoo_academy.field_res_ethnic__name
 msgid "The name of nation"
 msgstr ""
@@ -439,8 +581,8 @@ msgid "The students that belong to the class."
 msgstr ""
 
 #. module: viindoo_academy
-#: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_single__wizard_multipe_id
-msgid "Wizard Multipe"
+#: model:ir.model.fields,field_description:viindoo_academy.field_wizard_enrollment_single__wizard_multi_id
+msgid "Wizard Multi"
 msgstr ""
 
 #. module: viindoo_academy
@@ -448,15 +590,14 @@ msgstr ""
 #: code:addons/viindoo_academy/models/education_enrollment.py:0
 #, python-format
 msgid ""
-"You may not be able to enroll a student into the class %s whose status is "
-"not Confirmed."
+"You cannot enroll in the class %s because the class status is not confirmed"
 msgstr ""
 
 #. module: viindoo_academy
 #. odoo-python
 #: code:addons/viindoo_academy/models/education_enrollment.py:0
 #, python-format
-msgid "You may not be able to enroll the student %s into the class %s twice."
+msgid "You may not able to enroll the student %s into the class %s twice"
 msgstr ""
 
 #. module: viindoo_academy

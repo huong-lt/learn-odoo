@@ -16,8 +16,4 @@ class ResEthnic(models.Model):
         # groups='base.group_user,base.group_portal'
         )
     
-    @api.model
-    def name_create(self, name):
-        code = name.lower().replace(" ", "")
-        return self.create({'code': code, 'name': name}).name_get()[0]
 

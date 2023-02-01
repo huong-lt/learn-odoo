@@ -75,8 +75,9 @@
 
 		<menuitem id="education_class_vip_menu"
 			action="education_class_vip_action"
-			parent="viindoo_academy.root_menu" sequence="10" />
-
+			parent="viindoo_academy.root_menu" sequence="10" 
+			groups="viin_vip_academy.viin_education_group_allow_manager_class_vip"/>
+			
 
 	</data>
 </odoo>

@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_viin_vip_academy_viin_vip_academy,viin_vip_academy.viin_vip_academy_user,model_education_class_vip,base.group_user,1,1,1,1
+access_viin_vip_academy_viin_vip_academy,viin_vip_academy.viin_vip_academy_user,model_education_class_vip,viin_education_group_allow_manager_class_vip,1,1,1,1

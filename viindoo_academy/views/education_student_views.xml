@@ -6,8 +6,7 @@
 			<field name="arch" type="xml">
 				<tree string="Student Tree">
 					<field name="name" />
-					<field name="ethnic_id" />
-					<field name="country_id" />
+					<field name="class_count" />
 				</tree>
 			</field>
 		</record>
@@ -22,22 +21,34 @@
 						<button
 							name="%(viindoo_academy.education_enrollment_single_action)d"
 							type="action" string="Enroll" />
+						<button
+							name="%(viindoo_academy.education_enrollment_multiple_action)d"
+							type="action" string="Enroll Multiple" />
 					</header>
 					<sheet>
 						<div class="oe_title">
 							<h1>
 								<field name="name"
-									placeholder="Please input name of the class" />
+									placeholder="Please input name of the student" />
 							</h1>
 						</div>
 						<group>
-							<group>
-								<field name="ethnic_id" />
-								<field name="country_id" />
-							</group>
+							<field name="ethnic_id" />
+							<field name="class_count" string="Class Count" />
 						</group>
 						<notebook>
-							<page name="ed_history" string="Education History">
+							<page name="class_enrollment" string="Class">
+								<field name="enrollment_ids">
+									<tree editable="top" create="false" delete="false">
+										<field name="name" readonly="1" />
+										<field name="class_id" readonly="1" />
+										<field name="student_id" invisible="1" />
+										<field name="date" readonly="1" />
+									</tree>
+								</field>
+							</page>
+							<page name="ed_history" string="Education History"
+								invisible="1">
 								<field name="class_ids">
 									<tree>
 										<field name="name" />
@@ -84,12 +95,6 @@
 
 		<menuitem id="education_student_menu"
 			action="education_student_action" parent="root_menu" sequence="10" />
-
-
-
-
-
-
 
 	</data>
 </odoo>

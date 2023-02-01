@@ -24,6 +24,7 @@
 
     # always loaded
     'data': [
+        'security/vip_security.xml',
         'security/ir.model.access.csv',
         'views/education_class_vip_views.xml',
 

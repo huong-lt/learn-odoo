@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="report_education_class_detail">
+			<t t-call="web.external_layout">
+				<t t-set="o" t-value="o.with_context(lang=lang)" />
+				<div class="page text-center">
+					<h2>Enrollment Class Report</h2>
+				</div>
+				<div id="informations" class="row">
+					<div class="col-auto" name="class_name">
+						<strong>Class: </strong>
+						<span class="m-0" t-field="o.name" />
+					</div>
+					<div class="col-auto" name="description">
+						<strong>Description: </strong>
+						<span class="m-0" t-field="o.description" />
+					</div>
+				</div>
+				<table class="table table-striped" name="student_line_table">
+					<thead>
+						<tr>
+							<th name="th_ref" class="w-30 p-3 text-start">
+								<span>.Ref</span>
+							</th>
+							<th name="th_student" class="w-50 p-3 text-start">
+								<span>Student</span>
+							</th>
+							<th name="th_date" class="w-20 p-3 text-start">
+								<span>Date</span>
+							</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<t t-set="lines"
+							t-value="o.enroll_ids.sorted(key=lambda l: (l.date))" />
+						<t t-foreach="lines" t-as="line">
+							<tr>
+								<td>
+									<span t-field="line.name" />
+								</td>
+								<td>
+									<span t-field="line.student_id.name" />
+								</td>
+								<td>
+									<span t-field="line.date" />
+								</td>
+							</tr>
+						</t>
+					</tbody>
+				</table>
+			</t>
+		</template>
+
+		<template id="enroll_class_report">
+			<t t-foreach="docs" t-as="o">
+				<t t-call="web.html_container">
+					<t t-call="viindoo_academy.report_education_class_detail" />
+				</t>
+			</t>
+		</template>
+
+		<record id="class_report" model="ir.actions.report">
+			<field name="name">Enrollment Class</field>
+			<field name="model">education.class</field>
+			<field name="report_type">qweb-html</field>
+			<field name="report_name">viindoo_academy.enroll_class_report</field>
+			<field name="report_file">viindoo_academy.enroll_class_report</field>
+			<field name="binding_model_id" ref="model_education_class" />
+			<field name="binding_type">report</field>
+		</record>
+
+	</data>
+</odoo>

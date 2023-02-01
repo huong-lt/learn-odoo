@@ -8,12 +8,13 @@
 					decoration-warning="end_date==today"
 					decoration-muted="state=='cancelled'">
 					<field name="name" />
-					<field name="description" />
+					<field name="course_id" />
 					<field name="start_date" />
 					<field name="end_date" />
+					<field name="responsible_id" />
 					<field name="state" decoration-success="state=='done'"
 						decoration-primary="state=='draft'" widget="badge" />
-					<field name="students_count" optional="hide" />
+					<field name="students_count" />
 					<field name="company_id" />
 				</tree>
 			</field>
@@ -28,7 +29,12 @@
 					<header>
 						<button
 							name="%(viindoo_academy.education_enrollment_single_action)d"
-							type="action" string="Enroll" />
+							type="action" string="Enroll"
+							attrs="{'invisible': [ ('state', '!=', 'confirmed')]}" />
+						<button
+							name="%(viindoo_academy.education_enrollment_multiple_action)d"
+							type="action" string="Enroll multiple"
+							attrs="{'invisible': [ ('state', '!=', 'confirmed')]}" />
 						<field name="state" widget="statusbar"
 							options="{'clickable': '1'}" />
 					</header>
@@ -43,26 +49,52 @@
 								<field name="start_date" />
 								<field name="end_date" />
 							</group>
+							<group>
+								<field name="course_id" />
+								<field name="students_count"
+									groups="viindoo_academy.group_academy_admin" />
+								<field name="responsible_id" />
+								<field name="company_id"
+									groups="viindoo_academy.group_academy_admin" />
+							</group>
 						</group>
 						<group>
 							<field name="description" />
 						</group>
-						<group>
-							<field name="students_count" />
-							<field name="company_id" />
-						</group>
+
 						<notebook>
-							<page name="enrollment" string="Enrollment">
-								<field name="enrollment_ids">
-									<tree>
-										<field name="name" />
-										<field name="student_id" />
-										<field name="date" />
+							<page name="enrollment" string="Students Enrollments">
+								<field name="enroll_ids">
+									<tree editable="top" create="false" delete="false">
+										<field name="name" readonly="1" />
+										<field name="student_id" readonly="1" />
+										<field name="class_id" invisible="1" />
+										<field name="date" readonly="1" />
 									</tree>
 								</field>
 							</page>
-							<page name="enroll_student" string="Enrolled Students">
-								<field name="enrolled_student_ids">
+							<page name="students_enroll" string="Students">
+								<field name="enroll_students_ids">
+									<tree>
+										<field name="name" />
+										<field name="create_date" />
+										<field name="create_uid" />
+									</tree>
+								</field>
+							</page>
+							<page name="student" string="Students 2" invisible="1">
+								<field name="student_ids">
+									<tree>
+										<field name="name" />
+										<field name="create_date" />
+										<field name="create_uid" />
+									</tree>
+								</field>
+							</page>
+
+							<page name="students" string="Historical Students"
+								invisible="1">
+								<field name="historical_student_ids">
 									<tree>
 										<field name="name" />
 										<field name="create_date" />

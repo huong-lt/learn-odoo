@@ -1,0 +1,40 @@
+<odoo>
+	<data>
+
+		<record id="view_education_enrollment_multiple_form"
+			model="ir.ui.view">
+			<field name="name">wizard.enrollment.multiple.form</field>
+			<field name="model">wizard.enrollment.multiple</field>
+			<field name="arch" type="xml">
+				<form string="Multiple Enrollment Wizard">
+
+					<group>
+						<field name="registration_number" />
+						<field name="student_ids" widget="many2many_tags"
+							attrs="{'invisible': [('active_model','=','education.student')]}"/>
+						<field name="class_ids" widget="many2many_tags"
+							attrs="{'invisible': [('active_model','=','education.class')]}"/>
+						<field name="active_model" invisible="1"/>
+						<field name="date" />
+					</group>
+					<footer>
+						<button name="enroll_multiple" string="Enroll" type="object"
+							class="btn-primary" />
+						<button string="Cancel" class="btn-default"
+							special="cancel" />
+					</footer>
+
+				</form>
+			</field>
+		</record>
+
+		<record id="education_enrollment_multiple_action"
+			model="ir.actions.act_window">
+			<field name="name">Multiple Enrollment Wizard</field>
+			<field name="res_model">wizard.enrollment.multiple</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</odoo>

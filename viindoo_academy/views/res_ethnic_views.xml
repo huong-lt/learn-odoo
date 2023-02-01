@@ -18,9 +18,10 @@
 			<field name="arch" type="xml">
 				<form string="Class Form">
 					<sheet>
-					<header>
-						<button name="button_abc" groups="account.group_account_manager" />
-					</header>
+						<header>
+							<button name="button_abc"
+								groups="account.group_account_manager" />
+						</header>
 						<group>
 							<field name="name" />
 							<field name="code" groups="base.group_user" />
@@ -31,7 +32,14 @@
 			</field>
 		</record>
 
+		<record id="ethnic_action" model="ir.actions.act_window">
+			<field name="name">Ethnic</field>
+			<field name="res_model">res.ethnic</field>
+			<field name="view_mode">tree,form</field>
+		</record>
 
+		<menuitem id="ethnic_menu" sequence="10"
+			action="ethnic_action" parent="root_menu" />
 
 	</data>
 </odoo>

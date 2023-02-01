@@ -24,14 +24,20 @@
 
     # always loaded
     'data': [
+       # 'security/academy_security.xml',
         'security/ir.model.access.csv',
         'views/root_menu.xml',
+        'views/education_course_views.xml',
         'wizard/education_enrollment_views.xml',
+        'wizard/education_enrollment_views_multiple.xml',
         'views/education_class_views.xml',
         'views/education_class_views2.xml',
         'views/education_student_views.xml',
         'views/education_enrollment_views.xml',
-        'reports/academy_report_views.xml',
+        'views/res_ethnic_views.xml',
+        'report/education_class_reports.xml',
+        'report/education_student_reports.xml',
+        'report/education_report.xml'
         # 'views/templates.xml',
     ],
     # only loaded in demonstration mode

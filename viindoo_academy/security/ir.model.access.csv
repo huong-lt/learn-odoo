@@ -1,8 +1,10 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_education_class_employee,education.class.employee,model_education_class,base.group_user,1,1,1,1
-access_education_class_student,education.student.employee,model_education_student,base.group_user,1,1,1,1
-access_wizard_enrollment_single_employee,wizard.enrollment.single.employee,model_wizard_enrollment_single,base.group_user,1,1,1,1
+access_education_course_employee,education_course_employee,model_education_course,base.group_user,1,1,1,1
+access_education_class_employee,education_class_employee,model_education_class,base.group_user,1,1,1,1
+access_education_class_student,education_class_student,model_education_student,base.group_user,1,1,1,1
+access_wizard_enrollment_single_employee,wizard_enrollment_single_employee,model_wizard_enrollment_single,base.group_user,1,1,1,1
 access_education_enrollment_employee,education.enrollment.employee,model_education_enrollment,base.group_user,1,1,1,1
-access_wizard_enrollment_multi_employee,wizard.enrollment.multi.employee,model_wizard_enrollment_multi,base.group_user,1,1,1,1
-access_academy_report_employee,academy.report.employee,model_academy_report,base.group_user,1,0,0,0
-access_res_ethnic_employee,res.ethnic.employee,model_res_ethnic,base.group_user,1,1,1,1
+access_wizard_enrollment_multi_employee,wizard_enrollment_multi_employee,model_wizard_enrollment_multi,base.group_user,1,1,1,1
+access_wizard_enrollment_multiple_employee,wizard_enrollment_multiple_employee,model_wizard_enrollment_multiple,base.group_user,1,1,1,1
+access_education_report,education_report,model_education_report,base.group_user,1,1,1,1
+access_res_ethnic,res_ethnic,model_res_ethnic,base.group_user,1,1,1,1

@@ -1,0 +1,8 @@
+<odoo>
+	<data>
+		<record id="viin_education_group_allow_manager_class_vip"
+			model="res.groups">
+			<field name="name">Allow class management</field>
+		</record>
+	</data>
+</odoo>

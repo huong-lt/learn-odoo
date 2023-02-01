@@ -24,10 +24,5 @@ class EducationClassVip(models.Model):
         inverse_name='class_vip_id',
         string='Students',
         help="The students that belong to the class.")
-
-    
-    enrolled_student_ids = fields.Many2many('education.student', 'vip_enroll_student_rel',
-                                            'class_id', 'student_id',
-                                            )
     
     

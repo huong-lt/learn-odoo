@@ -1,20 +1,14 @@
 <odoo>
-    <data>
-<record id="deducation_class_view_tree" model="ir.ui.view">
-
-
-
-
-
-
-</record>
-
-
-
-
-
-
-
-
-    </data>
+	 <template id="index">
+        <t t-call="website.layout">
+            <t t-set="title">Academy</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <t t-foreach="teachers" t-as="teacher">
+                        <p><t t-esc="teacher.id"/> <t t-esc="teacher.name"/></p>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
 </odoo>

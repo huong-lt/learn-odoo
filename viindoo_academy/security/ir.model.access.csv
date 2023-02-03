@@ -9,3 +9,4 @@ access_wizard_enrollment_multiple_employee,wizard_enrollment_multiple_employee,m
 access_education_report,education_report,model_education_report,base.group_user,1,1,1,1
 access_res_ethnic,res_ethnic,model_res_ethnic,base.group_user,1,1,1,1
 access_academy_report2,academy_report2,model_academy_report2,base.group_user,1,1,1,1
+access_academy_teachers,access_academy_teachers,model_academy_teachers,base.group_user,1,1,1,1

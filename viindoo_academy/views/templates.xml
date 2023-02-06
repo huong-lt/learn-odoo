@@ -1,14 +1,45 @@
 <odoo>
-	 <template id="index">
-        <t t-call="website.layout">
-            <t t-set="title">Academy</t>
-            <div class="oe_structure">
-                <div class="container">
-                    <t t-foreach="teachers" t-as="teacher">
-                        <p><t t-esc="teacher.id"/> <t t-esc="teacher.name"/></p>
-                    </t>
-                </div>
-            </div>
-        </t>
-    </template>
+	<template id="index">
+		<t t-call="website.layout">
+			<t t-set="title">Academy</t>
+			<div class="oe_structure">
+				<div class="container">
+					<t t-foreach="teachers" t-as="teacher">
+						<p>
+							<t t-esc="teacher.id" />
+							<a t-attf-href="/academy/{{ slug(teacher) }}">
+								<t t-esc="teacher.name" />
+							</a>
+						</p>
+					</t>
+				</div>
+			</div>
+		</t>
+	</template>
+	<template id="biography">
+		<t t-call="website.layout">
+			<t t-set="title">Academy</t>
+			<div class="oe_structure" />
+			<div class="oe_structure">
+				<div class="container">
+					<h3 t-field="person.name" />
+					<p>
+						Date of birth:
+						<i t-field="person.birthday" />
+					</p>
+					<p>
+						Age:
+						<t t-esc="person.age" />
+					</p>
+					<p>
+						Last modified:
+						<i t-field="person.write_date"
+							t-options='{"widget": "relative"}' />
+					</p>
+					<div t-field="person.biography" />
+				</div>
+			</div>
+			<div class="oe_structure" />
+		</t>
+	</template>
 </odoo>

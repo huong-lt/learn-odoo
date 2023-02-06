@@ -4,16 +4,19 @@ class Teachers(models.Model):
     _name = 'academy.teachers'
     _decription="Teachers"
 
-    name = fields.Char()
-    birthday=fields.Date()
+    name = fields.Char(
+        string="Teacher"
+        )
+    birthday=fields.Date(
+        string="Date of birth"
+        )
     age = fields.Integer(
         string='Age', 
-        compute='_compute_teacher_age', 
-        store=True
+        compute='_compute_teacher_age'
         )
     biography=fields.Html()
     
-    @api.depends('birthday')
+    #@api.depends('birthday')
     def _compute_teacher_age(self):
         today=date.today()
         for r in self:

@@ -13,7 +13,7 @@ class Teachers(models.Model):
         )
     biography=fields.Html()
     
-    #@api.depends('birthday')
+    @api.depends('birthday')
     def _compute_teacher_age(self):
         today=date.today()
         for r in self:

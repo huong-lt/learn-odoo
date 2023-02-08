@@ -1,5 +1,4 @@
 from odoo import models, fields, api
-from datetime import date
 class Teachers(models.Model):
     _name = 'academy.teachers'
     _decription="Teachers"
@@ -18,6 +17,10 @@ class Teachers(models.Model):
     
     @api.depends('birthday')
     def _compute_teacher_age(self):
-        today=date.today()
+        today=fields.Date.today() # dùng thư viện của Odoo để có thể giả lập thời gian được
         for r in self:
-            r.age = today.year-r.birthday.year 
+            if r.birthday:
+                r.age = today.year-r.birthday.year
+            else:
+                r.age=r.age 
+                
